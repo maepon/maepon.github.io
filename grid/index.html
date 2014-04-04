@@ -26,7 +26,7 @@
       <div class="container">
         <div class="intro">
           <a href="/grid"><h1>grid</h1></a>
-          <p>レスポンシブデザイン入門<br>Made by <a href="http://www.adamkaplan.me/" target="_blank">Adam Kaplan</a> 日本語訳 <a href="http://maepon.skpn.com/">Masayuki Maekawa</a></p>
+          <p>レスポンシブデザイン入門<br>Made by <a href="http://www.adamkaplan.me/" target="_blank">Adam Kaplan</a><br>日本語訳 <a href="http://maepon.skpn.com/">Masayuki Maekawa</a></p>
         </div>
         <img src="./images/mobile.png" alt="Intro" class="mobile animated fadeInUp">
       </div>
@@ -36,7 +36,7 @@
       <div class="container">
         <img src="./images/mobile-first.png" alt="Mobile First" class="rwd">
         <h1>なぜ、レスポンシブに労力を費やすのか?</h1>
-        <p class="text-box">私達は全てのデバイスにおいて、スクリーンのサイズや縦横の方向といったユーザーの環境に合わせて、ウェブサイトが利用しやすくなることを望んでいます。</p>
+        <p class="text-box">私達は全てのデバイスにおいて、スクリーンのサイズや縦横の方向といったユーザーの環境に左右されずに、ウェブサイトが利用しやすくなることを目指しています。</p>
       </div>
     </section>
 
@@ -54,10 +54,10 @@
     <section>
       <div class="container">
         <h1>モバイルファースト</h1>
-        <p class="text-box">最近になって「モバイルファースト」という言葉がそこらじゅうで聞かれるようになりました。その言葉は、モバイル向けのスタイルから始めて、必要とされる時に大きなスクリーンに最適化したスタイルを適用するということを意味します。言い換えると、作成したモバイル向けのスタイルがデフォルトになり、それ以降に書き換える必要はないということです。それもうはるかにシンプルです！</p>
+        <p class="text-box">最近になって「モバイルファースト」という言葉がそこらじゅうで聞かれるようになりました。その言葉は、モバイル向けのスタイルから始めて、必要とされる時に大きなスクリーンに最適化したスタイルを適用するということを意味します。言い換えると、作成したモバイル向けのスタイルがデフォルトになり、それ以降に書き換える必要はないということです。それはとてもシンプルです！</p>
         <hr>
         <blockquote class="text-box">
-          <p>デフォルトでは柔軟でシンプルなレイアウトを想定することで、ビューポートが広いブラウザや、狭くてレスポンシブウェブデザインに対応できないブラウザにもより良い対応ができます。そういう意味で、私達がレイアウトについて話すときには、「モバイルファースト」の真意は「プログレッシブエンハンスメント」であると言っています。<cite>—Ethan Marcotte</cite></p>
+          <p>デフォルトでは柔軟でシンプルなレイアウトを想定することで、ビューポートが広いブラウザや、狭くてレスポンシブウェブデザインに対応できないブラウザにも適した対応ができます。そういう意味で、私達がレイアウトについて話すときには、「モバイルファースト」の真意は「プログレッシブエンハンスメント」であると言っています。<cite>—Ethan Marcotte</cite></p>
         </blockquote>
       </div>
     </section>
@@ -70,8 +70,8 @@
 
     <section>
       <div class="container">
-        <h1>min-widthメディアクエリー</h1>
-        <p class="text-box">必要な場合のみレイアウトに固有なルールを導入します。レイアウトがビューポートが広がるにつれて複雑になっていくように`min-width`を利用します。全てのメディアクエリーはスタイルシートの最後や別ファイルにしてしまうよりは、対象の記述の近くに存在するほうがやりやすいでしょう。</p>
+        <h1>min-width メディアクエリー</h1>
+        <p class="text-box">必要な場合のみレイアウトに固有なルールを導入します。レイアウトがビューポートが広がるにつれて複雑になっていくように`min-width`を利用します。全てのメディアクエリーをスタイルシートの最後や別ファイルにしてしまうよりは、対象の記述の近くに存在するほうがやりやすいでしょう。</p>
         <hr>
         <script src="https://gist.github.com/aekaplan/8969695.js"></script>
       </div>
@@ -81,8 +81,8 @@
       <div class="container">
         <div class="circle">1</div>
         <h1>全てのブラウザは同じように作られていない</h1>
-        <p class="text-box">ブラウザたちはCSSを同じようにレンダリングしないでしょう。これを回避するためには、リセットの現代的な代替手段である<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>,
-        といったものを利用することをおすすめします。より一貫性のあるクロスブラウザへの対応でレンダリングされるでしょう。あなたのスタイルシートの前に読み込むことを忘れないで下さい。</p>
+        <p class="text-box">ブラウザたちはCSSを同じようにレンダリングしないでしょう。これを回避するためには、リセットの現代的な代替手段である<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>
+        といったものを利用することをおすすめします。より一貫性のあるクロスブラウザへの対応が行われたレンダリングが実行されるでしょう。あなたのスタイルシートの前に読み込むことを忘れないで下さい。</p>
         <hr>
         <script src="https://gist.github.com/aekaplan/8969436.js"></script>
       </div>
@@ -142,7 +142,7 @@
       <div class="container">
         <div class="circle">3</div>
         <h1>box-sizing: border-boxを利用する</h1>
-        <p class="text-box"><code>CSS</code> ファイルの先頭に記述しします。 <code>*</code> はページ内の全ての要素を指します。</p>
+        <p class="text-box"><code>CSS</code> ファイルの先頭に記述します。 <code>*</code> はページ内の全ての要素を指します。</p>
         <hr>
         <script src="https://gist.github.com/aekaplan/8247563.js"></script>
       </div>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Grid</title>
+    <meta name="description" content="A simple guide to responsive design.">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./grid.css">
+    <!--[if lt IE 9]>
+      <script src="./js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="clearfix">
+      <div class="container">
+        <div class="intro">
+          <a href="/grid"><h1>grid</h1></a>
+          <p>レスポンシブデザイン入門<br>Made by <a href="http://www.adamkaplan.me/" target="_blank">Adam Kaplan</a> 日本語訳 <a href="http://maepon.skpn.com/">Masayuki Maekawa</a></p>
+        </div>
+        <img src="./images/mobile.png" alt="Intro" class="mobile animated fadeInUp">
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <img src="./images/mobile-first.png" alt="Mobile First" class="rwd">
+        <h1>なぜ、レスポンシブに労力を費やすのか?</h1>
+        <p class="text-box">私達は全てのデバイスにおいて、スクリーンのサイズや縦横の方向といったユーザーの環境に合わせて、ウェブサイトが利用しやすくなることを望んでいます。</p>
+      </div>
+    </section>
+
+    <section class="example fragmentation">
+      <div class="container"></div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>断片化された世界</h1>
+        <p class="text-box"><a href="http://opensignal.com/reports/fragmentation-2013/" target="_blank">2013年現在</a>、数千種類のデバイスとスクリーンサイズがインターネットにアクセスしています。それら全てに対して、それぞれレイアウトを設計するのはもはや不可能です。そんなことより、デザインにより流動的なアプローチを取り入れるべきでしょう。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>モバイルファースト</h1>
+        <p class="text-box">最近になって「モバイルファースト」という言葉がそこらじゅうで聞かれるようになりました。その言葉は、モバイル向けのスタイルから始めて、必要とされる時に大きなスクリーンに最適化したスタイルを適用するということを意味します。言い換えると、作成したモバイル向けのスタイルがデフォルトになり、それ以降に書き換える必要はないということです。それもうはるかにシンプルです！</p>
+        <hr>
+        <blockquote class="text-box">
+          <p>デフォルトでは柔軟でシンプルなレイアウトを想定することで、ビューポートが広いブラウザや、狭くてレスポンシブウェブデザインに対応できないブラウザにもより良い対応ができます。そういう意味で、私達がレイアウトについて話すときには、「モバイルファースト」の真意は「プログレッシブエンハンスメント」であると言っています。<cite>—Ethan Marcotte</cite></p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="example quote remove-padding">
+      <div class="container">
+        <img src="./images/small-large.png" alt="Mobile First">
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>min-widthメディアクエリー</h1>
+        <p class="text-box">必要な場合のみレイアウトに固有なルールを導入します。レイアウトがビューポートが広がるにつれて複雑になっていくように`min-width`を利用します。全てのメディアクエリーはスタイルシートの最後や別ファイルにしてしまうよりは、対象の記述の近くに存在するほうがやりやすいでしょう。</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8969695.js"></script>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">1</div>
+        <h1>全てのブラウザは同じように作られていない</h1>
+        <p class="text-box">ブラウザたちはCSSを同じようにレンダリングしないでしょう。これを回避するためには、リセットの現代的な代替手段である<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>,
+        といったものを利用することをおすすめします。より一貫性のあるクロスブラウザへの対応でレンダリングされるでしょう。あなたのスタイルシートの前に読み込むことを忘れないで下さい。</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8969436.js"></script>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">2</div>
+        <h1>metaタグにviewportを追加する</h1>
+        <p class="text-box">HTMLの <code>&lt;head&gt;</code> 内に配置します。これにより、様々なデバイスでレイアウトできるようになります。</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8243831.js"></script>
+      </div>
+    </section>
+
+    <section class="example">
+      <div class="container">
+        <img src="./images/box-model.png" alt="Box Model">
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>CSSボックスモデル</h1>
+        <p class="text-box">CSSボックスモデルへの理解は、レスポンシブ・ウェブ・デザインに飛び込む前に、各要素がブラウザの中でどのように生成されふるまうかといった基本として重要です。CSSボックスモデルは4つの要素から構成されています。</p>
+        <hr>
+
+        <div class="row clearfix">
+          <div class="column fourth">
+            <img src="./images/content.png" alt="content">
+            <h3 class="content">内容</h3>
+            <p class="text-box">テキストや画像などが表示される領域</p>
+          </div>
+
+          <div class="column fourth">
+            <img src="./images/padding.png" alt="padding">
+            <h3 class="padding">パディング</h3>
+            <p class="text-box">内容のまわりの何もない領域</p>
+          </div>
+
+          <div class="column fourth">
+            <img src="./images/border.png" alt="border">
+            <h3 class="border">ボーダー</h3>
+            <p class="text-box">ボーダーはパディングのまわりに存在します</p>
+          </div>
+
+          <div class="column fourth">
+            <img src="./images/margin.png" alt="margin">
+            <h3 class="margin">マージン</h3>
+            <p class="text-box">ボーダーのまわりの何もない領域</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">3</div>
+        <h1>box-sizing: border-boxを利用する</h1>
+        <p class="text-box"><code>CSS</code> ファイルの先頭に記述しします。 <code>*</code> はページ内の全ての要素を指します。</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8247563.js"></script>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>あなたの選択</h1>
+        <p class="text-box"><a href="http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug" target="_blank">このかつてのバグ</a>
+        は今や広く用いられるCSSのプロパティとなりました。これは、コンテンツの幅を決めるときにボーダーとパディングを含めるのか否かをあなたが選択できることを意味しています。</p>
+        <hr>
+
+        <div class="row clearfix">
+          <div class="column half">
+            <img src="./images/without-box-model.png" alt="Without Box Model">
+            <h3>box-sizing: border-box なし</h3>
+            <p class="text-box">マージン、ボーダー、パディングは内容の幅の外側に描画されます。</p>
+          </div>
+
+          <div class="column half">
+            <img src="./images/with-box-model.png" alt="With Box Model">
+            <h3>box-sizing: border-box あり</h3>
+            <p class="text-box">ボーダーとパディングは内容の幅の中に描画されます。マージンは外側に描画されます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">4</div>
+        <h1>コンテナーを作成する</h1>
+        <p class="text-box">コンテナーは、全ての要素を保持し、ページの最大幅に収めます。コンテナーを利用すればレスポンシブなデザインは簡単になります！</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8246124.js"></script>
+        <script src="https://gist.github.com/aekaplan/8246032.js"></script>
+      </div>
+    </section>
+
+    <section class="example">
+      <div class="container">
+        <img src="./images/container.png" alt="Container">
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">5</div>
+        <h1>カラムを作成する</h1>
+        <p class="text-box">モバイルファーストでは、基本的にカラムは <code>block</code> レベル（利用可能な幅を全て含む）になります。追加のスタイルはいりません！</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8978649.js"></script>
+      </div>
+    </section>
+
+    <section class="example grid mobile-first">
+      <div class="container">
+        <div class="column">
+          <span>.column</span>
+        </div>
+
+        <div class="column">
+          <span>.column</span>
+        </div>
+
+        <div class="column">
+          <span>.column</span>
+        </div>
+
+        <div class="column">
+          <span>.column</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">6</div>
+        <h1>カラムのサイズを設定する</h1>
+        <p class="text-box">大きなスクリーンでは、カラムにコンテンツを水平方向に配置する目的で <code>float: left</code> を設定します。カラムの間隔にはパディングを利用するので、マージンの除去を心配する必要はありません。</p>
+        <hr>
+      </div>
+
+      <div class="container gutters">
+        <div class="row clearfix">
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <script src="https://gist.github.com/aekaplan/9040799.js"></script>
+        <script src="https://gist.github.com/aekaplan/8978515.js"></script>
+      </div>
+    </section>
+
+    <section class="example grid">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="column full">
+            <span>.column .full</span>
+          </div>
+        </div>
+
+        <div class="row clearfix">
+          <div class="column two-thirds">
+            <span>.column .two-thirds</span>
+          </div>
+
+          <div class="column third">
+            <span>.column .third</span>
+          </div>
+        </div>
+
+        <div class="row clearfix">
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+        </div>
+
+        <div class="row clearfix">
+          <div class="column third">
+            <span>.column .third</span>
+          </div>
+
+          <div class="column third">
+            <span>.column .third</span>
+          </div>
+
+          <div class="column third">
+            <span>.column .third</span>
+          </div>
+        </div>
+
+        <div class="row clearfix">
+          <div class="column fourth">
+            <span>.column .fourth</span>
+          </div>
+
+          <div class="column fourth">
+            <span>.column .fourth</span>
+          </div>
+
+          <div class="column fourth">
+            <span>.column .fourth</span>
+          </div>
+
+          <div class="column fourth">
+            <span>.column .fourth</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="circle">7</div>
+        <h1>行の作成</h1>
+        <p class="text-box">カラムは他の要素に続いて配置されることを防ぐ目的で、行ごとにラッピングされます。でないと、配置の解除に問題が発生することが知られています。行は <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">Nicolas Gallagher</a> が作成した <code>clearfix</code> で配置の解除を行うことが一般的です。</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/8430571.js"></script>
+        <script src="https://gist.github.com/aekaplan/8467436.js"></script>
+      </div>
+    </section>
+
+    <section class="example grid row-example">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+        </div>
+
+        <div class="row clearfix">
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>反対側へ流す(Flow Opposite)</h1>
+        <p class="text-box">モバイルではいち早く表示しつつ、大きなスクリーンでは右に配置したいコンテンツには、 <code>.flow-opposite</code> クラスを付与します。</p>
+        <hr>
+        <script src="https://gist.github.com/aekaplan/9025378.js"></script>
+        <script src="https://gist.github.com/aekaplan/9025387.js"></script>
+      </div>
+    </section>
+
+    <section class="example grid">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="column half flow-opposite">
+            <span>.column .half .flow-opposite</span>
+          </div>
+
+          <div class="column half">
+            <span>.column .half</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>勉強はおわりました</h1>
+        <p class="text-box">この手順を踏むことで、あなたはレスポンシブ・ウェブ・デザインを修得する過程に踏み込みました。このまま勉強を続けてウェブをより良く、より利用しやすい場にすることに参加してください。</p>
+        <hr>
+        <p><a href="https://github.com/aekaplan/grid" target="_blank" class="button">View the Code</a></p>
+      </div>
+    </section>
+
+    <section class="resources">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="column half">
+            <h3>参考文献</h3>
+            <hr class="small">
+            <ul>
+              <li><a href="http://www.abookapart.com/products/mobile-first" target="_blank">A Book Apart: Mobile First</a></li>
+              <li><a href="http://www.abookapart.com/products/responsive-web-design" target="_blank">A Book Apart: Responsive Web Design</a></li>
+              <li><a href="http://blog.teamtreehouse.com/beginners-guide-to-responsive-web-design" target="_blank">Beginner’s Guide to Responsive Web Design</a></li>
+              <li><a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw" target="_blank">Box-sizing: Border-box FTW</a></li>
+              <li><a href="http://dev.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972" target="_blank">Don’t Forget the Viewport Meta Tag</a></li>
+              <li><a href="http://bradfrostweb.com/blog/mobile/the-many-faces-of-mobile-first/" target="_blank">The Many Faces of ‘Mobile First’</a></li>
+              <li><a href="http://fuseinteractive.ca/blog/understanding-humble-clearfix" target="_blank">Understanding the Humble Clearfix</a></li>
+            </ul>
+          </div>
+
+          <div class="column half">
+            <h3>参考資料</h3>
+            <hr class="small">
+            <ul>
+              <li><a href="http://opensignal.com/reports/fragmentation-2013/" target="_blank">Android Fragmentation Visualized</a></li>
+              <li><a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box_model" target="_blank">Box Model</a></li>
+              <li><a href="https://developers.google.com/chrome-developer-tools/" target="_blank">Chrome Developer Tools</a></li>
+              <li><a href="https://gist.github.com/aekaplan" target="_blank">Code samples by GitHub Gist</a></li>
+              <li><a href="http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug" target="_blank">Internet Explorer Box Model</a></li>
+              <li><a href="http://coding.smashingmagazine.com/2009/04/22/progressive-enhancement-what-it-is-and-how-to-use-it/" target="_blank">Progressive Enhancement</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
